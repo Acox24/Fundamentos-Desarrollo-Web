@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 18px;
+    color: #828282;
+}
+
+.especial{
+    background-color: turquoise;
+    font-weight: bold;
+}
+
+#importante{
+    background-color: red;
+    color: white;
+}
+
+input[placeholder]{
+    border-color: blue;
+    padding: 5px;
+}
+
+input[type="password"]{
+    background-color: #cdcdcd ;
+}
