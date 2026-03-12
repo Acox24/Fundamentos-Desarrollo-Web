@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        background-color: aqua;
+      }
+
+      .element {
+        height: 200px;
+        width: 33%;
+        float: left;
+      }
+
+      .element1 {
+        background-color: red;
+      }
+      .element2 {
+        background-color: green;
+      }
+      .element3 {
+        background-color: blue;
+      }
+
+      @media (width < 335px) {
+        .element {
+          width: 100%;
+        }
+      }
+
+      @media (376px <= width <= 768px) {
+        .element1 {
+        width: 50%;
+        background-color: black;
+      }
+      .element2 {
+        width: 50%;
+      }
+      .element3 {
+        width: 100%;
+      }
+      }
+
+      @media (width > 769px) {
+        .element {
+          width: 33%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="element element1"></div>
+      <div class="element element2"></div>
+      <div class="element element3"></div>
+    </div>
+  </body>
+</html>

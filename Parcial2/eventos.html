@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventos JS</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .element {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(252, 0, 0);
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <!-- Evento onload: Se ejecuta cuando la página ha terminado de cargar -->
+  <body onload="saludar()">
+    <!-- Evento onclick: Se ejecuta cuando se hace clic en el botón -->
+    <!-- <button onclick="saludar(event)">Saludar</button>
+    
+    <p onclick="saludar()">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
+      voluptatibus tenetur ipsam odio unde necessitatibus eaque, minus commodi
+      alias voluptate fugit voluptas ducimus dolorem ab mollitia neque ratione,
+      sunt impedit.
+    </p> -->
+
+    <button onclick="agregarElemento()">AGREGAR</button>
+
+    <div class="container">
+      <!-- Contenedor para los elementos agregados dinámicamente -->
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const input = document.createElement("input");
+      let counter = 0;
+
+      function saludar() {
+        console.log("Hola Mundo");
+      }
+
+      function agregarElemento() {
+        counter++;
+        const container = document.querySelector(".container");
+        element.textContent = input.value;
+        const newElement = document.createElement("div");
+        container.appendChild(newElement);
+      }
+    </script>
+  </body>
+</html>
