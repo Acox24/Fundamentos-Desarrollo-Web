@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+
+        .container{
+
+            margin: 5px;
+            gap: 5px;
+
+            display: flex; /*con esta propiedad, los elementos se colocan uno al lado del otro, pero si el espacio no es suficiente, se colocan uno debajo del otro*/
+            /*flex-direction: row; /*con esta propiedad, los elementos se colocan uno al lado del otro, pero si el espacio no es suficiente, se colocan uno debajo del otro*/
+            /*flex-direction: column; /*con esta propiedad, los elementos se colocan uno debajo del otro, pero si el espacio no es suficiente, se colocan uno al lado del otro*/
+            flex-direction: row-reverse; /*con esta propiedad, los elementos se colocan uno al lado del otro, pero si el espacio no es suficiente, se colocan uno debajo del otro, pero en orden inverso*/
+            /*justify-content: center; /*con esta propiedad, los elementos se centran horizontalmente*/
+            /*justify-content: end; /*con esta propiedad, los elementos se alinean a la derecha*/
+            /*justify-content: space-between; /*con esta propiedad, los elementos se distribuyen de manera uniforme, con el primer elemento alineado a la izquierda y el último elemento alineado a la derecha*/
+            /*justify-content: space-around; /*con esta propiedad, los elementos se distribuyen de manera uniforme, con el primer elemento alineado a la izquierda y el último elemento alineado a la derecha, pero con espacio entre ellos*/
+            /*justify-content: space-evenly; /*con esta propiedad, los elementos se distribuyen de manera uniforme, con el primer elemento alineado a la izquierda y el último elemento alineado a la derecha, pero con espacio entre ellos, incluyendo el espacio entre el primer elemento y el borde izquierdo y el espacio entre el último elemento y el borde derecho*/
+            /*align-items: center; /*con esta propiedad, los elementos se centran verticalmente*/
+             /*flex-wrap: wrap; /*con esta propiedad, los elementos se colocan uno al lado del otro, pero si el espacio no es suficiente, se colocan uno debajo del otro*/
+        }
+
+        .element{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /*display: inline-block; /*con esta propiedad, los elementos se colocan uno al lado del otro, pero si el espacio no es suficiente, se colocan uno debajo del otro*/
+            font-size: larger;
+            text-align: center;
+            border: 1px solid black;
+        }  
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="element">1</div>
+        <div class="element">2</div>
+        <div class="element" style="flex-grow: 1;">3</div> <!--con esta propiedad, el elemento ocupa todo el espacio disponible, pero si hay otros elementos con esta propiedad, se divide el espacio entre ellos-->
+        <div class="element">4</div>
+        <div class="element">5</div>    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage</title>
+  </head>
+  <body>
+    <button onclick="incrementarContador()">+1</button>
+    <p>0</p>
+    <script>
+      function incrementarContador() {
+        let cont = localStorage.getItem("contador");
+
+        if (cont == null) {
+          cont = 0;
+        }
+
+        cont++;
+        const p = document.querySelector("p");
+        p.textContent = cont;
+        localStorage.setItem("contador", cont);
+      }
+    </script>
+  </body>
+</html>
