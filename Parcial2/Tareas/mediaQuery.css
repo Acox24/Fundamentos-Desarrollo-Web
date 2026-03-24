@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 600px) { /*una columna*/
+
+    .container{
+        flex-direction: column;
+    }
+  
+}
+
+@media (600px <= width <= 1200px) { /*dos columnas*/
+
+    .container{
+        flex-direction: row;
+    }
+
+    .datosP{
+        flex:1;
+    }
+
+    .derecha{
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+    }
+  
+}
+
+@media (min-width: 1200px) { /*tres columnas*/
+
+    .container{
+        flex-direction: row;
+    }
+
+    .derecha{
+        display: contents;
+
+    }
+
+    .datosP, .formacionA, .experienciaL{
+
+        flex: 1;
+    }
+  
+}

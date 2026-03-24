@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Json</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .element {
+        width: 250px;
+        min-height: 150px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .element img {
+        width: 50px;
+        margin-bottom: 10px;
+      }
+      .element p {
+        font-size: 14px;
+      }
+      .element img {
+        width: 50px;
+        margin-bottom: 10px;
+      }
+      .element p {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Agregar MEME Random de Chuck Norris</h1>
+    <button onclick="agregarElemento()">AGREGAR</button>
+
+    <div class="container">
+      <!-- Contenedor para los elementos agregados dinámicamente -->
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      async function cargar() {
+        const response = await fetch("https://api.chucknorris.io/jokes/random");
+        const data = await response.json();
+        return data;
+      }
+
+      async function agregarElemento() {
+        const data = await cargar();
+
+        const element = document.createElement("div");
+        element.textContent = element.classList.add("element");
+
+        const img = document.createElement("img");
+        img.src = data.icon_url;
+
+        const texto = document.createElement("p");
+        texto.textContent = data.value;
+
+        element.appendChild(img);
+        element.appendChild(texto);
+
+        container.appendChild(element);
+      }
+    </script>
+  </body>
+</html>

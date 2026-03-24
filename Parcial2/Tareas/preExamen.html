@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre-Examen</title>
+    <link rel="stylesheet" href="preExamen.css" />
+  </head>
+
+  <body>
+    <div class="containerG">
+      <h1>TAREAS</h1>
+
+      <input type="text" id="texto" placeholder="Escribe una tarea..." />
+      <button onclick="agregarElemento()">AGREGAR</button>
+
+      <div class="lista"></div>
+    </div>
+
+    <div class="lista">
+      <!-- Contenedor para los elementos agregados dinámicamente -->
+    </div>
+
+    <script>
+      const lista = document.querySelector(".lista");
+      const input = document.querySelector("#texto");
+
+      function agregarElemento() {
+        if (input.value.trim() === "") return; // evitar vacío
+
+        const task = document.createElement("div");
+        task.classList.add("task");
+
+        const text = document.createElement("span");
+        text.textContent = input.value;
+
+        const buttons = document.createElement("div");
+        buttons.classList.add("buttons");
+
+        const btnComplete = document.createElement("button");
+        btnComplete.textContent = "✔";
+        btnComplete.classList.add("complete");
+
+        btnComplete.addEventListener("click", () => {
+          task.classList.toggle("completed");
+        });
+
+        const btnDelete = document.createElement("button");
+        btnDelete.textContent = "✖";
+        btnDelete.classList.add("delete");
+
+        btnDelete.addEventListener("click", () => {
+          task.remove();
+        });
+
+        buttons.appendChild(btnComplete);
+        buttons.appendChild(btnDelete);
+
+        task.appendChild(text);
+        task.appendChild(buttons);
+
+        lista.appendChild(task);
+
+        input.value = "";
+      }
+    </script>
+  </body>
+</html>
